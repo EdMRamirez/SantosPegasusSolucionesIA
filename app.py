@@ -1,5 +1,10 @@
 import streamlit as st
+import os
 
+from src.config.configuracion import Configuracion
+from src.ingestion.cargador_documentos import CargadorDocumentos
+from src.ingestion.divisor_documentos import DivisorDocumentos
+from src.embeddings.vectorstore import VectorStore
 from src.rag.agente_rag import AgenteRAG
 
 
@@ -88,6 +93,21 @@ st.markdown(
 # ------------------------
 
 if "agente" not in st.session_state:
+
+    indice_faiss = os.path.join(
+        Configuracion.CARPETA_VECTORSTORE,
+        "index.faiss"
+    )
+
+    if not os.path.exists(indice_faiss):
+
+        with st.spinner("Preparando la base de conocimiento... Esto puede tardar unos segundos la primera vez."):
+
+            documentos = CargadorDocumentos().cargar()
+
+            chunks = DivisorDocumentos().dividir(documentos)
+
+            VectorStore().crear(chunks)
 
     st.session_state.agente = AgenteRAG()
 
