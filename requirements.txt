@@ -1,0 +1,9 @@
+cohere
+langchain
+langchain-community
+langchain-cohere
+faiss-cpu
+pypdf
+python-dotenv
+streamlit
+tqdm
