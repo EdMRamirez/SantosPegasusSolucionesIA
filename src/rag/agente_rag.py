@@ -6,6 +6,7 @@ class AgenteRAG:
         self.modelo = ClienteCohere().obtener_modelo()
         self.vectorstore = VectorStore().cargar()
 
+    
     def responder(self, pregunta: str):
         documentos = self.vectorstore.similarity_search(
             pregunta,
