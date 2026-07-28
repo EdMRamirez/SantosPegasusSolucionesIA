@@ -177,6 +177,11 @@ streamlit run app.py
 - Fácil de desplegar en Oracle Cloud.
 
 ---
+# Anexo
+<img width="1271" height="600" alt="image" src="https://github.com/user-attachments/assets/52f6a7f9-4707-4ac6-93da-01afd0730dc1" />
+<img width="1250" height="620" alt="image" src="https://github.com/user-attachments/assets/abccf37d-32bc-4bf3-8b92-fcba3ad82196" />
+
+
 
 # Autor
 
